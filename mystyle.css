@@ -1,9 +1,16 @@
-fname{
+body{
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing : auto;
+    font-weight: 400;
+    font-style: normal;
+
+    background-image: url('img/background.JPG');
+}
+
+h1{
     text-align: center;
     color: #007187;
 }
 
-p{
-    text-align: center;
-    color: #007187;
-}
+
+
