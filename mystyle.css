@@ -9,8 +9,80 @@ body{
 
 h1{
     text-align: center;
-    color: #007187;
+    color: white;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
+td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+input[type="text"], input[type="number"], input[type="date"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus, select:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+tr:hover td {
+    background-color: #f0f8ff;
+    transition: background-color 0.3s;
+}
+
+textarea {
+    resize: none;
+}
+input[type="submit"], input[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #4a90e2;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #357ab7;
+}
+
+input[type="reset"] {
+    background-color: #999;
+}
+
+input[type="reset"]:hover {
+    background-color: #777;
+}
 
