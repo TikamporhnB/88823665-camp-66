@@ -3,12 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// แสดงฟอร์ม
+Route::get('/mycontroller', [MyController::class, 'showForm']);
 
-Route::get('/hello', function () {
-    return "<h1>Hello World!</h1>";
-});
+// แสดงตารางสูตรคูณ
+Route::post('/mycontroller', [MyController::class, 'showTable']);
 
-Route::get("/mycontroller/{id?}",[MyController::class , 'myfunction']);
+
