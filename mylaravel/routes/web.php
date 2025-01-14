@@ -3,8 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 
-Route::get('/mycontroller', [MyController::class, 'showForm']);
+Route::get('/mycontroller', 
+[MyController::class, 'showForm']);
 
-Route::post('/mycontroller', [MyController::class, 'showTable']);
+Route::post('/mycontroller', 
+[MyController::class, 'showTable']);
 
+Route::get('/' , function() {
+        return view('layouts.default');
+});
 
