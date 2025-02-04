@@ -26,5 +26,9 @@ Route::post('/mycontroller',
 
 Route::get('/' , function() {
         return view('layouts.default');
+
+
+Route::resource('users', UserController::class);
+        
 });
 
