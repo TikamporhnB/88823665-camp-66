@@ -1,27 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    public function showForm()
-    {
-        return view('multiplication_form');
+    private function myprivate(){
+        return 1;
     }
-
-    public function showTable(Request $req)
-    {
-        $number = $req->input('myinput'); 
-
-        if (is_numeric($number)) {
-            $multiplicationTable = [];
-            for ($i = 1; $i <= 12; $i++) {
-                $multiplicationTable[] = "{$number} x {$i} = " . ($number * $i);
-            }
-            return view('multiplication_table', compact('number', 'multiplicationTable'));
-        } else {
-            return redirect('/mycontroller')->with('error', 'Please enter a valid number.');
-        }
+    function myfunction(Request $req, $var1 = ""){
+        $data['myinput'] =$req->input('myinput');
+        $data['myvalue'] =$var1;
+        return view('myview', $data);
     }
 }
