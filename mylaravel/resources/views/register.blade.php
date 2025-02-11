@@ -130,7 +130,7 @@
         function checkValue() {
             let checkbox = document.getElementById("flexCheckDefault");
             if (!checkbox.checked){
-                alert("🚨 Please check the checkbox");
+                alert("Please check the checkbox");
                 return false;
             }
 
