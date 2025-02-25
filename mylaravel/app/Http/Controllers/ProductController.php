@@ -2,21 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use Illuminate\Http\Request;
-use App\Models\categories;
+use App\Models\Category;
 use App\Models\ProductList;
 
 class ProductController extends Controller
 {
+    //
     function index(){
-        return view('product');
+        $category = Categories::with('products')->get();
+        return view('product', compact('category'));
     }
+    function add_product(Request $req){
+        $category = new Categories();
+        $category->name = $req->category_name;
+        $category->save();
 
-    function store(Request $req){
-        //return redirect('/product');
-        print_r($req->input());
-        $c = new categories();
-        $c -> name = $req->category;
-        $c -> save();
+        foreach($req->product_name as $value){
+            $product = new ProductList();
+            $product->name = $value;
+            $product->category_id = $category->id;
+            $product->user_id = session()->get('user')->id;
+            $product->save();
+        }
+        return redirect('/product');
     }
 }
